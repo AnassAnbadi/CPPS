@@ -1,6 +1,6 @@
 #include "HumanB.hpp"
 #include <iostream>
-HumanB::HumanB(std::string humanName) : name(humanName), weapon(nullptr) {}
+HumanB::HumanB(std::string humanName) : name(humanName){}
 void HumanB::setWeapon(Weapon& newWeapon) {
     weapon = &newWeapon;
 }
