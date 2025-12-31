@@ -1,5 +1,5 @@
 
-NAME = Brain
+NAME = replicator
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

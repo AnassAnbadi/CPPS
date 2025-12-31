@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanbadi <aanbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 03:03:29 by aanbadi           #+#    #+#             */
-/*   Updated: 2025/12/31 03:03:30 by aanbadi          ###   ########.fr       */
+/*   Created: 2025/12/31 03:01:55 by aanbadi           #+#    #+#             */
+/*   Updated: 2025/12/31 03:01:56 by aanbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Harl.hpp"
 
-Zombie* newZombie(std::string name) {
-    return new Zombie(name);
+int main()
+{
+    Harl harl;
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    return 0;
 }
