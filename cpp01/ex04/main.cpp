@@ -6,7 +6,7 @@
 /*   By: aanbadi <aanbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 03:02:09 by aanbadi           #+#    #+#             */
-/*   Updated: 2025/12/31 03:02:10 by aanbadi          ###   ########.fr       */
+/*   Updated: 2026/01/01 00:22:42 by aanbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int main(int ac , char *av[])
 
     size_t pos = 0;
     
-    std::ifstream file(filename);
+    std::ifstream file(filename.c_str());
     if (!file.is_open())
     {
         std::cerr << "Error: Could not open file " << filename << std::endl;
         return 1;
     }
-    std::ofstream outfile(filename_replace);
+    std::ofstream outfile(filename_replace.c_str());
       if (!outfile.is_open())
     {
         std::cerr << "Error: Could not open file " << filename_replace << std::endl;
