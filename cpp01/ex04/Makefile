@@ -1,24 +1,21 @@
 
 NAME = replicator
 
+SRC = main.cpp Rwclass.cpp
+OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
-OBJS = main.o
-
 all: $(NAME)
 
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
+$(NAME): $(OBJ)
+	$(CXX) $(OBJ) -o $(NAME)
 
-
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
-
+%.o: %.cpp Rwclass.hpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
