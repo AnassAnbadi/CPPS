@@ -27,7 +27,7 @@ int    Rwclass::replace()
     std::string line;
     getline(file, line, '\0');
     file.close();
-    if (!s1.empty())
+    if (!s1.empty() && s1 != s2)
     {
         while ((pos=line.find(s1)) != std::string::npos)
         {
