@@ -13,7 +13,7 @@ int    Rwclass::replace()
     size_t pos = 0;
     
     std::ifstream file(filename.c_str());
-    if (!file.is_open())
+    if (!file.is_open() || file.peek() == -1)
     {
         std::cerr << "Error: Could not open file " << filename << std::endl;
         return 1;
@@ -27,12 +27,13 @@ int    Rwclass::replace()
     std::string line;
     getline(file, line, '\0');
     file.close();
-    if (!s1.empty() && s1 != s2)
+    if (!s1.empty())
     {
-        while ((pos=line.find(s1)) != std::string::npos)
+        while ((pos=line.find(s1, pos)) != std::string::npos)
         {
           line.erase(pos, s1.size());
           line.insert(pos, s2);
+          pos += s2.size();
         }
     }
     outfile << line;
