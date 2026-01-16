@@ -1,8 +1,6 @@
 #include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 
 int main()
@@ -19,15 +17,21 @@ int main()
     for (int i = 0; i < 4; i++)
         delete animals[i];
 
-    std::cout << "Test deep copy:" << std::endl;
-    Dog dog1;
-    dog1.getBrain()->setIdea(0, "Chase the cat");
-    Dog dog2 = dog1;
-    std::cout << "Dog1 Idea[0]: " << dog1.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Dog2 Idea[0]: " << dog2.getBrain()->getIdea(0) << std::endl;
-    dog2.getBrain()->setIdea(0, "Eat the bone");
-    std::cout << "After modifying Dog2's idea:" << std::endl;
-    std::cout << "Dog1 Idea[0]: " << dog1.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Dog2 Idea[0]: " << dog2.getBrain()->getIdea(0) << std::endl;  
+      std::cout << "---- Correct Animal Sounds ----" << std::endl;
+    // const Animal* meta = new Animal();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
+
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    // meta->makeSound();
+
+    // delete meta;
+    delete j;
+    delete i;
+
     return 0;
 }
