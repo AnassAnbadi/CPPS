@@ -1,20 +1,20 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap(), guard_mode(false)
+ScavTrap::ScavTrap() : ClapTrap()
 {
     this->hitpoints = 100;
     this->energy_points = 50;
     this->attack_damage = 20;
     std::cout << "ScavTrap Default constructor called" << std::endl;
 }
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name), guard_mode(false)
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
     this->hitpoints = 100;
     this->energy_points = 50;
     this->attack_damage = 20;
     std::cout << "ScavTrap Parameterized constructor called for " << name << std::endl;
 }
-ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj), guard_mode(obj.guard_mode)
+ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
     std::cout << "ScavTrap Copy constructor called for " << obj.name << std::endl;
 }
@@ -23,7 +23,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &obj)
     if (this != &obj)
     {
         ClapTrap::operator=(obj);
-        this->guard_mode = obj.guard_mode;
     }
     return *this;
 }
@@ -43,6 +42,5 @@ void ScavTrap::attack(const std::string &target)
 }
 void ScavTrap::guardGate()
 {
-    this->guard_mode = true;
     std::cout << "ScavTrap " << this->name << " is now in Gate Keeper mode." << std::endl;
 }   

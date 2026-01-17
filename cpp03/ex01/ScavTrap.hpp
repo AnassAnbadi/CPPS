@@ -5,8 +5,6 @@
 # include "ClapTrap.hpp"
 class ScavTrap : public ClapTrap
 {
-    private:
-        bool guard_mode;
     public:
         ScavTrap();
         ScavTrap(const std::string &name);
